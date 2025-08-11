@@ -1,13 +1,14 @@
+import styles from './Card.module.css'
 
-const Cart = ({title, imageUrl}) => {
+const Card = ({title, imageUrl}) => {
     return (
-        <div className="card h-100 border-0">
-            <img src={imageUrl} className="card-img-top" alt={title} />
+        <div className="card h-100">
+            <img src={imageUrl} className="cardImage" alt={title} />
             <div className="card-body text-center">
-                <h6 className="card-title">{title}</h6>
+                <h6 className={`${styles.cardTitle}`}>{title}</h6>
             </div>
         </div>
     )
 }
 
-export default Cart;
+export default Card;
