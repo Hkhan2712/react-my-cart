@@ -1,4 +1,4 @@
-import { arrowRight as ArrowRight } from '../../icons';
+import { ArrowRight } from '../../icons';
 import styles from './style.module.css';
 const TopBar = () => {
     return (

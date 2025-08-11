@@ -1,4 +1,4 @@
-import { arrowRight as ArrowRight } from "../../icons"
+import { ArrowRight } from "../../icons"
 const EmailForm = () => {
   return (
     <form className="d-flex">

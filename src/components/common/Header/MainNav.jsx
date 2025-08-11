@@ -1,24 +1,34 @@
-import React from 'react';
-import UserActions from './UserActions';
-import styles from './style.module.css';
+import UserActions from './UserActions'
+import styles from './style.module.css'
 
-const MainNav = () => {
+const menuItems = ["Women", "Men", "About", "Everworld Stories"];
+
+const MainNav = ({ onMenuHover }) => {
     return (
-        <nav className="main-nav container-fluid d-flex align-items-center justify-content-between position-relative border-bottom" style={{ minHeight: '4rem' }}>
-            {/* Left - Menu */}
+        <nav
+            className="main-nav container-fluid d-flex align-items-center justify-content-between position-relative border-bottom"
+            style={{ minHeight: "4rem" }}
+        >
+        {/* Left - Menu */}
             <div className="d-flex flex-grow-1 justify-content-start ps-5">
                 <ul className="nav">
-                    {['Women', 'Men', 'About', 'Everworld Stories'].map((item, index) => (
-                        <li className="nav-item" key={index}>
-                            <a className="nav-link text-dark" href="#">{item}</a>
-                        </li>
-                    ))}
+                {menuItems.map((item, index) => (
+                    <li
+                    className="nav-item"
+                    key={index}
+                    onMouseEnter={() => onMenuHover(item)}
+                    >
+                    <a className={styles.navLink} href="#">
+                        {item}
+                    </a>
+                    </li>
+                ))}
                 </ul>
             </div>
 
             {/* Center - Logo */}
             <div className="position-absolute start-50 translate-middle-x">
-                <div className={styles.logo}>EVERLANE</div>
+                <div className="logo fs-3 fw-bold">EVERLANE</div>
             </div>
 
             {/* Right - User Actions */}
@@ -26,7 +36,7 @@ const MainNav = () => {
                 <UserActions />
             </div>
         </nav>
-    );
-};
+    )
+}
 
-export default MainNav;
+export default MainNav
