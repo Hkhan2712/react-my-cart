@@ -1,7 +1,12 @@
 import UserActions from './UserActions'
 import styles from './style.module.css'
 
-const menuItems = ["Women", "Men", "About", "Everworld Stories"];
+const menuItems = [
+    {title:"Women", link: '#'}, 
+    {title: "Men", link:'#'}, 
+    {title:"About", link: '/about'}, 
+    {title:"Everworld Stories", link: '/stories'}
+]
 
 const MainNav = ({ onMenuHover }) => {
     return (
@@ -16,10 +21,10 @@ const MainNav = ({ onMenuHover }) => {
                     <li
                     className="nav-item"
                     key={index}
-                    onMouseEnter={() => onMenuHover(item)}
+                    onMouseEnter={() => onMenuHover(item.title)}
                     >
-                    <a className={styles.navLink} href="#">
-                        {item}
+                    <a className={styles.navLink} href={item.link}>
+                        {item.title}
                     </a>
                     </li>
                 ))}
@@ -28,7 +33,9 @@ const MainNav = ({ onMenuHover }) => {
 
             {/* Center - Logo */}
             <div className="position-absolute start-50 translate-middle-x">
-                <div className="logo fs-3 fw-bold">EVERLANE</div>
+                <a href="/" className="logo fs-3 fw-bold text-decoration-none text-dark">
+                    EVERLANE
+                </a>
             </div>
 
             {/* Right - User Actions */}

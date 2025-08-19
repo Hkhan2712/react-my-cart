@@ -5,7 +5,7 @@ import {
     CartIcon
 } from '@/components/icons'
 import Cart from '../Cart'
-import { useUI } from '@/contexts/UIContext'
+import { useUI } from '@/hooks/useUI'
 
 const UserActions = () => {
     const [showCart, setShowCart] = useState(false)
